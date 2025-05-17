@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import Button, { BUTTON_TYPES } from "./index";
+import Button, { BUTTON_TYPES } from "./button";
 
 describe("When a button is created", () => {
   it("the button must include a title", () => {

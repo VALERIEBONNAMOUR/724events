@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import md5 from "md5";
-import Icon from ".";
+import Icon from "./icon";
 
 describe("Icon component", () => {
     describe("When a icon is created with name twitch", () => {

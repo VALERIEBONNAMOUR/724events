@@ -1,6 +1,6 @@
 /* eslint-disable no-return-assign */
-import Button from "../../components/Button";
-import Logo from "../../components/Logo";
+import Button from "../../components/Button/button";
+import Logo from "../../components/Logo/logo";
 
 import "./style.scss";
 

@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import Select from "./index";
+import Select from "./select";
 
 describe("When a select is created", () => {
   it("a list of choices is displayed", () => {

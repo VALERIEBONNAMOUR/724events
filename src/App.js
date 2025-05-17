@@ -1,7 +1,7 @@
 /* istanbul ignore file */
 import "./App.scss";
-import Page from "./pages/Home";
-import { DataProvider } from "./contexts/DataContext";
+import Page from "./pages/Home/home";
+import { DataProvider } from "./contexts/DataContext/datacontexts";
 
 function App() {
   return (

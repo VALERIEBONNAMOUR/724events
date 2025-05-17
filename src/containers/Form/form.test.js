@@ -1,5 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import Form from "./index";
+import Form from "./form";
+
+
 
 describe("When Events is created", () => {
   it("a list of event card is displayed", async () => {
@@ -27,3 +29,5 @@ describe("When Events is created", () => {
     });
   });
 });
+
+

@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import EventCard from "./index";
+import EventCard from "./evencard";
 
 describe("When a event card is created", () => {
   it("an image is display with alt value", () => {

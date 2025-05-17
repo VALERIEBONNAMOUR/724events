@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import Home from "./index";
+import Home from "./home";
 
 describe("When Form is created", () => {
   it("a list of fields card is displayed", async () => {

@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import Field, { FIELD_TYPES } from "./index";
+import Field, { FIELD_TYPES } from "./field";
 
 describe("When a field is created", () => {
   it("a name is set on the field", () => {

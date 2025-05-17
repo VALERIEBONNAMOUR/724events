@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import ServiceCard from "./index";
+import ServiceCard from "./servicecard";
 
 describe("When a service card is created", () => {
   it("an image is display with alt value", () => {

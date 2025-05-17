@@ -1,8 +1,9 @@
 import { useCallback, useState } from "react";
 import PropTypes from "prop-types";
-import Field, { FIELD_TYPES } from "../../components/Field";
-import Select from "../../components/Select";
-import Button, { BUTTON_TYPES } from "../../components/Button";
+import Field, { FIELD_TYPES } from "../../components/Field/field";
+import Select from "../../components/Select/select";
+import Button, { BUTTON_TYPES } from "../../components/Button/button";
+// import React, { useState } from "react";
 
 const mockContactApi = () => new Promise((resolve) => { setTimeout(resolve, 500); })
 
@@ -16,6 +17,7 @@ const Form = ({ onSuccess, onError }) => {
       try {
         await mockContactApi();
         setSending(false);
+        onSuccess()
       } catch (err) {
         setSending(false);
         onError(err);
@@ -38,6 +40,7 @@ const Form = ({ onSuccess, onError }) => {
           />
           <Field placeholder="" label="Email" />
           <Button type={BUTTON_TYPES.SUBMIT} disabled={sending}>
+           {/* data-testid="button-test-id"> */}
             {sending ? "En cours" : "Envoyer"}
           </Button>
         </div>
@@ -62,5 +65,27 @@ Form.defaultProps = {
   onError: () => null,
   onSuccess: () => null,
 }
+
+// const Form = ({ onSuccess }) => {
+//   const [status, setStatus] = useState("Envoyer");
+
+//   const handleSubmit = () => {
+//     setStatus("En cours");
+//     setTimeout(() => {
+//       setStatus("Envoyer");
+//       if (onSuccess) {
+//         onSuccess();
+//       }
+//     }, 1000);
+//   };
+
+//   return (
+//     <div>
+//       <button data-testid="button-test-id" onClick={handleSubmit}>
+//         {status}
+//       </button>
+//     </div>
+//   );
+// };
 
 export default Form;

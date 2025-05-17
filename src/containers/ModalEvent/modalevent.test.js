@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import ModalEvent from "./index";
+import ModalEvent from "./modalevent";
 
 const data = {
   type: "soirée entreprise",

@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { api, DataProvider } from "../../contexts/DataContext";
-import Events from "./index";
+import { api, DataProvider } from "../../contexts/DataContext/datacontexts";
+import Events from "./events";
 
 const data = {
   events: [

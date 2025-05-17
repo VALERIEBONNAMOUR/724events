@@ -2,7 +2,7 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import { fireEvent, render, screen } from "@testing-library/react";
-import Modal from "./index";
+import Modal from "./modal";
 
 describe("When Modal data is created", () => {
   it("a modal content is display", () => {

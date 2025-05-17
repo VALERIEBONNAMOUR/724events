@@ -1,19 +1,20 @@
-import Menu from "../../containers/Menu";
-import ServiceCard from "../../components/ServiceCard";
-import EventCard from "../../components/EventCard";
-import PeopleCard from "../../components/PeopleCard";
+import Menu from "../../containers/Menu/menu";
+import ServiceCard from "../../components/ServiceCard/servicecard";
+import EventCard from "../../components/EventCard/evencard";
+import PeopleCard from "../../components/PeopleCard/peoplecard";
 
 import "./style.scss";
-import EventList from "../../containers/Events";
-import Slider from "../../containers/Slider";
-import Logo from "../../components/Logo";
-import Icon from "../../components/Icon";
-import Form from "../../containers/Form";
-import Modal from "../../containers/Modal";
-import { useData } from "../../contexts/DataContext";
+import EventList from "../../containers/Events/events";
+import Slider from "../../containers/Slider/slider";
+import Logo from "../../components/Logo/logo";
+import Icon from "../../components/Icon/icon";
+import Form from "../../containers/Form/form";
+import Modal from "../../containers/Modal/modal";
+// import ModalEvent from "../../containers/ModalEvent";
+import { useData } from "../../contexts/DataContext/datacontexts";
 
 const Page = () => {
-  const {last} = useData()
+  const { last } = useData()
   return <>
     <header>
       <Menu />
@@ -114,16 +115,19 @@ const Page = () => {
       </div>
     </main>
     <footer className="row">
-      <div className="col presta">
-        <h3>Notre derniére prestation</h3>
-        <EventCard
-          imageSrc={last?.cover}
-          title={last?.title}
-          date={new Date(last?.date)}
-          small
-          label="boom"
-        />
-      </div>
+      {last && (
+        <div className="col presta">
+          <h3>Notre derniére prestation</h3>
+          <EventCard
+            imageSrc={last?.cover}
+            title={last?.title}
+            date={new Date(last?.date)}
+            small
+            label="boom"
+          />
+        </div>
+      )}
+
       <div className="col contact">
         <h3>Contactez-nous</h3>
         <address>45 avenue de la République, 75000 Paris</address>
