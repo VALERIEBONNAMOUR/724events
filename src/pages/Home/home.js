@@ -2,7 +2,6 @@ import Menu from "../../containers/Menu/menu";
 import ServiceCard from "../../components/ServiceCard/servicecard";
 import EventCard from "../../components/EventCard/evencard";
 import PeopleCard from "../../components/PeopleCard/peoplecard";
-
 import "./style.scss";
 import EventList from "../../containers/Events/events";
 import Slider from "../../containers/Slider/slider";
@@ -10,11 +9,15 @@ import Logo from "../../components/Logo/logo";
 import Icon from "../../components/Icon/icon";
 import Form from "../../containers/Form/form";
 import Modal from "../../containers/Modal/modal";
-// import ModalEvent from "../../containers/ModalEvent";
 import { useData } from "../../contexts/DataContext/datacontexts";
 
 const Page = () => {
-  const { last } = useData()
+  const { data } = useData()
+  const sortedEvents = data?.events?.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  const last = sortedEvents?.[0];
+  
+  
   return <>
     <header>
       <Menu />
@@ -123,7 +126,7 @@ const Page = () => {
             title={last?.title}
             date={new Date(last?.date)}
             small
-            label="boom"
+            label= {last?.type}
           />
         </div>
       )}

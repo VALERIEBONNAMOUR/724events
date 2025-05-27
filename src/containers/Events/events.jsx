@@ -39,7 +39,6 @@ const EventList = () => {
   };
 
   const typeList = new Set(data?.events?.map((event) => event.type));
-  console.log(typeList);
   
   return (
     <>
@@ -51,7 +50,7 @@ const EventList = () => {
           <h3 className="SelectTitle">Catégories</h3>
           <Select
             selection={Array.from(typeList)}
-            onChange={changeType} // Simplifié
+            onChange={changeType} 
           />
           <div id="events" className="ListContainer">
             {filteredEvents.map((event) => (
